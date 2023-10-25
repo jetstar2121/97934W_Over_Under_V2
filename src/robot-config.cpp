@@ -8,6 +8,14 @@ using code = vision::code;
 brain  Brain;
 
 // VEXcode device constructors
+controller Controller1;
+
+//Pneumatics
+pneumatics left_wing(Brain.ThreeWirePort.A);
+pneumatics right_wing(Brain.ThreeWirePort.B);
+
+//Motors
+
 
 // VEXcode generated functions
 
