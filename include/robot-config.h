@@ -7,8 +7,9 @@ extern controller Controller1;
 extern pneumatics left_wing, right_wing;
 extern motor front_right, back_right, front_left, back_left;
 extern motor_group left_drive, right_drive;
-extern motor 
-extern inertial Inertial;
+extern motor intakes;
+
+extern motor kicker;
 // VEXcode devices
 
 /**

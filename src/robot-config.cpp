@@ -27,6 +27,8 @@ motor intakes(PORT10, ratio6_1);
 
 inertial Inertial(PORT7);
 
+motor kicker(PORT15, ratio36_1);
+
 
 
 // VEXcode generated functions

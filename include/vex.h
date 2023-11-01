@@ -23,6 +23,8 @@
 #include "JAR-Template/util.h"
 #include "JAR-Template/PID.h"
 #include "autons.h"
+#include "intakes.h"
+#include "kicker.h"
 
 #define waitUntil(condition)                                                   \
   do {                                                                         \
