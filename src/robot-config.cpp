@@ -14,11 +14,17 @@ controller Controller1;
 pneumatics left_wing(Brain.ThreeWirePort.A);
 pneumatics right_wing(Brain.ThreeWirePort.B);
 
+pneumatics PTO(Brain.ThreeWirePort.C);
+
 //Motors
 motor front_right(PORT1, ratio6_1);
 motor front_left(PORT2, ratio6_1);
 motor back_right(PORT3, ratio6_1);
 motor back_left(PORT4, ratio6_1);
+
+motor PTO_left(PORT5, ratio18_1);
+motor PTO_right(PORT6, ratio18_1, false);
+motor_group PTO_group(PTO_left, PTO_right);
 
 motor_group left_drive(front_left, back_left);
 motor_group right_drive(front_right, back_right);

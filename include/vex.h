@@ -25,6 +25,7 @@
 #include "autons.h"
 #include "intakes.h"
 #include "kicker.h"
+#include "PTO.h"
 
 #define waitUntil(condition)                                                   \
   do {                                                                         \

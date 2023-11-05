@@ -181,6 +181,9 @@ void autonomous(void) {
 
 void usercontrol(void) {
   // User control code here, inside the loop
+
+
+  task pt(PTO_task);
   while (1) {
     task in(intakes_task);
     task ki(kicker_task);
