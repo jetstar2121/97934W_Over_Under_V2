@@ -14,11 +14,14 @@ int kicker_task() {
         if (Controller1.ButtonA.PRESSED) {
             kicker_toggle();
         }
-
         if (kicker_status) {
-            kicker.spin(fwd, 100, rpm);
+            kicker.spin(reverse, 100, rpm);
         } else {
-            kicker.stop(hold);
+            if (Controller1.ButtonRight.pressing()) {
+                kicker.spin(reverse, 100, rpm);
+            } else {
+                kicker.stop(hold);
+            }
         }
     }
     return 10;

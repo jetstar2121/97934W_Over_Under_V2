@@ -398,20 +398,27 @@ void Drive::holonomic_drive_to_point(float X_position, float Y_position, float a
 // but it can be changed with no repercussions.
 
 void Drive::control_arcade(){
-  float throttle = deadband(controller(primary).Axis3.value(), 5);
+  front_left.spin(fwd, -((Controller1.Axis3.value()) + Controller1.Axis4.value()), pct);
+  //mid_left.spin(fwd, (-(Controller1.Axis3.value()) + Controller1.Axis4.value()), pct);
+  back_left.spin(fwd, -((Controller1.Axis3.value()) + Controller1.Axis4.value()), pct);
+  
+  front_right.spin(fwd, -((Controller1.Axis3.value()) - Controller1.Axis4.value()), pct);
+  //mid_right.spin(fwd, (-(Controller1.Axis3.value()) - Controller1.Axis4.value()), pct);
+  back_right.spin(fwd, -((Controller1.Axis3.value()) - Controller1.Axis4.value()), pct);
+/*   float throttle = deadband((controller(primary).Axis3.value()), 5);
   float turn = deadband(controller(primary).Axis1.value(), 5);
   DriveL.spin(fwd, to_volt(throttle+turn), volt);
-  DriveR.spin(fwd, to_volt(throttle-turn), volt);
+  DriveR.spin(fwd, to_volt(throttle-turn), volt); */
 }
 
 void Drive::control_custom(){
-  front_left.spin(fwd, (-(Controller1.Axis3.value()) + Controller1.Axis4.value()), pct);
+  front_left.spin(fwd, ((Controller1.Axis3.value()) + Controller1.Axis4.value()), pct);
   //mid_left.spin(fwd, (-(Controller1.Axis3.value()) + Controller1.Axis4.value()), pct);
-  back_left.spin(fwd, (-(Controller1.Axis3.value()) + Controller1.Axis4.value()), pct);
+  back_left.spin(fwd, ((Controller1.Axis3.value()) + Controller1.Axis4.value()), pct);
 
-  front_right.spin(fwd, (-(Controller1.Axis3.value()) - Controller1.Axis4.value()), pct);
+  front_right.spin(fwd, ((Controller1.Axis3.value()) - Controller1.Axis4.value()), pct);
   //mid_right.spin(fwd, (-(Controller1.Axis3.value()) - Controller1.Axis4.value()), pct);
-  back_right.spin(fwd, (-(Controller1.Axis3.value()) - Controller1.Axis4.value()), pct);
+  back_right.spin(fwd, ((Controller1.Axis3.value()) - Controller1.Axis4.value()), pct);
 }
 
 void Drive::control_holonomic(){

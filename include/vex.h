@@ -23,8 +23,10 @@
 #include "JAR-Template/util.h"
 #include "JAR-Template/PID.h"
 #include "autons.h"
-#include "intakes.h"
-#include "kicker.h"
+#include "C:\Users\FRA Panthers\Desktop\Patrick Code\97934W_Over_Under_V2\include\Tasks\intakes.h"
+#include "C:\Users\FRA Panthers\Desktop\Patrick Code\97934W_Over_Under_V2\include\Tasks\kicker.h"
+#include "C:\Users\FRA Panthers\Desktop\Patrick Code\97934W_Over_Under_V2\include\Tasks\pneumatics.h"
+#include "C:\Users\FRA Panthers\Desktop\Patrick Code\97934W_Over_Under_V2\include\Tasks\PTO.h"
 
 #define waitUntil(condition)                                                   \
   do {                                                                         \

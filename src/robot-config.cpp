@@ -11,23 +11,29 @@ brain  Brain;
 controller Controller1;
 
 //Pneumatics
-pneumatics left_wing(Brain.ThreeWirePort.A);
-pneumatics right_wing(Brain.ThreeWirePort.B);
+pneumatics PTO(Brain.ThreeWirePort.A);
+pneumatics right_wing(Brain.ThreeWirePort.C);
+pneumatics left_wing(Brain.ThreeWirePort.E);
 
 //Motors
-motor front_right(PORT1, ratio6_1);
-motor front_left(PORT2, ratio6_1);
-motor back_right(PORT3, ratio6_1);
-motor back_left(PORT4, ratio6_1);
+motor front_right(PORT1, ratio6_1, true);
+motor front_left(PORT9, ratio6_1, false);
+motor back_right(PORT3, ratio6_1, true);
+motor back_left(PORT5, ratio6_1, false);
+
+motor PTO_left(PORT20, ratio6_1, false);
+motor PTO_right(PORT19, ratio6_1, true);
 
 motor_group left_drive(front_left, back_left);
 motor_group right_drive(front_right, back_right);
 
-motor intakes(PORT10, ratio6_1);
+motor_group PTO_group(PTO_left, PTO_right);
+
+motor intakes(PORT6, ratio36_1);
 
 inertial Inertial(PORT7);
 
-motor kicker(PORT15, ratio36_1);
+motor kicker(PORT14, ratio36_1);
 
 
 

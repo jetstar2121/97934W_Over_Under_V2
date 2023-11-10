@@ -1,16 +1,14 @@
 #include <vex.h>
 
-
 int intakes_task() {
-    if(Controller1.ButtonR1.pressing()) {
-        intakes.spin(fwd, 200, rpm);
+    while (1) {
+        if (Controller1.ButtonR1.pressing()) {
+            intakes.spin(fwd, 100, pct);
+        } else if (Controller1.ButtonR2.pressing()) {
+            intakes.spin(reverse, 100, pct);
+        } else {
+            intakes.stop(brake);
+        }
     }
-    else if(Controller1.ButtonR2.pressing()) {
-        intakes.spin(reverse, 200, rpm);
-    }
-    else {
-        intakes.stop(brake);
-    }
-
     return 10;
 }
